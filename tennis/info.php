@@ -1,4 +1,14 @@
-<?php $info = file_get_contents("info.txt"); ?>
+<?php
+$fp = fopen("info.txt", "r"); 
+$line = array();
+$body = '';
+if ($fp) {
+  while(!feof($fp)) {
+    $line[] = fgets($fp);
+  }
+  fclose($fp);
+}
+?>
 <!DOCTYPE html>
 <html lang="ja">
   <head>
@@ -11,7 +21,20 @@
     <main role="main" class="container" style="padding:60px 15px 0;">
       <div>
         <h1>お知らせ</h1>
-        <p><?php echo nl2br($info, false); ?></p>
+        <?php
+        if (count($line) > 0) {
+          for ($i = 0; $i < count($line); $i++) {
+            if ($i == 0) {
+              echo '<h2>' . $line[0] . '</h2>';
+            } else {
+              $body .= $line[$i] . '<br>';
+            }
+          }
+        } else {
+          $body = 'お知らせはありません。';
+        }
+        echo '<p>' . $body . '</p>';
+        ?>
       </div>
     </main>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
