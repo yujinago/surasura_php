@@ -4,7 +4,7 @@ $num = 10;
 
 $page = 1;
 if (isset($_GET['page']) && $_GET['page'] > 1) {
-  $page = intaval($_GET['page']);
+  $page = intval($_GET['page']);
 }
 
 try {
