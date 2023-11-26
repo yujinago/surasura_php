@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../../tennis_config.php';
+require_once __DIR__ . '/../../../tennis_config.php';
 $num = 10;
 
 $page = 1;
@@ -66,7 +66,7 @@ try {
               (<?php echo $row['date'] ?>)
             </div>
           </div>
-        </hr>
+          </hr>
         <?php endwhile; ?>
 
         <?php

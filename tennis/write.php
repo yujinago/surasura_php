@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../../tennis_config.php';
+require_once __DIR__ . '/../../../tennis_config.php';
 
 $name = $_POST['name'];
 $title = $_POST['title'];
