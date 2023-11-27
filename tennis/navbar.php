@@ -18,6 +18,9 @@
       <li class="nav-item">
         <a class="nav-link" href="bbs.php">掲示板</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="logout.php">ログアウト</a>
+      </li>
     </ul>
   </div>
 </nav>
