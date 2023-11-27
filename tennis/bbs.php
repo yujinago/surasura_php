@@ -1,5 +1,12 @@
 <?php
 require_once __DIR__ . '/../../../tennis_config.php';
+
+if (isset($_COOKIE['name'])) {
+  $name = $_COOKIE['name'];
+} else {
+  $name = "";
+}
+
 $num = 10;
 
 $page = 1;
@@ -39,7 +46,7 @@ try {
           </div>
           <div class="form-group">
             <label>名前</label>
-            <input type="text" name="name" class="form-control">
+            <input type="text" name="name" class="form-control" value="<?php echo $name ?>">
           </div>
           <div class="form-group">
             <textarea name="body" class="form-control" rows="5"></textarea>
