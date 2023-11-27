@@ -1,4 +1,5 @@
 <?php
+include 'includes/login.php';
 require_once __DIR__ . '/../../../tennis_config.php';
 
 $id = intval($_POST['id']);
