@@ -52,23 +52,16 @@ if (isset($_SESSION['id'])) {
     </style>
   </head>
   <body>
-    <?php include('navbar.php'); ?>
     <main role="main" class="container" style="padding:60px 15px 0;">
       <div>
-        <h1>お知らせ</h1>
-        <?php
-        if ($fp) {
-          $title = fgets($fp);
-          if ($title) {
-            echo '<p><a href="info.php">' . $title . '</a></p>';
-          } else {
-            echo '<p>お知らせはありません。</p>';
-          }
-          fclose($fp);
-        } else {
-          echo '<p>お知らせはありません。</p>';
-        }
-        ?>
+        <form action="login.php" method="post">
+          <h1>サークルサイト</h1>
+          <label class="sr-only">ユーザ名</label>
+          <input type="text" id="name" name="name" class="form-control" placeholder="ユーザ名">
+          <label class="sr-only">パスワード</label>
+          <input type="password" id="password" name="password" class="form-control" placeholder="パスワード">
+          <input type="submit" class="btn btn-primary btn-block" value="ログイン">
+        </form>
       </div>
     </main>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
