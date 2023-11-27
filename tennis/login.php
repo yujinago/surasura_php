@@ -31,6 +31,25 @@ if (isset($_SESSION['id'])) {
     <meta charset="utf-8">
     <title>サークルサイト</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style type="text/css">
+      form {
+        width: 100%;
+        max-width: 330px;
+        padding: 15px;
+        margin: auto;
+        text-align: center;
+      }
+      #name {
+        margin-bottom: -1px;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+      #password {
+        margin-bottom: 10px;
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+      }
+    </style>
   </head>
   <body>
     <?php include('navbar.php'); ?>
