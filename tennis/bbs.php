@@ -66,7 +66,7 @@ try {
             </div>
             <div class="card-body">
               <p class="card-text">
-                <?php echo nl2br($row['body']) ?>
+                <?php echo nl2br(htmlspecialchars($row['body'], ENT_QUOTES, 'UTF-8')) ?>
               </p>
             </div>
             <div class="card-footer">
