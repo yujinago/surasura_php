@@ -6,6 +6,12 @@ $name = $_POST['name'];
 $title = $_POST['title'];
 $body = $_POST['body'];
 $pass = $_POST['pass'];
+$token = $_POST['token'];
+
+if ($token != hash("sha256", session_id())) {
+  header('Location: bbs.php');
+  exit();
+}
 
 if ($name == '' || $body == '') {
   header("Location: bbs.php");
