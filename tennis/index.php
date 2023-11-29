@@ -13,6 +13,7 @@ $fp = fopen("info.txt", "r");
     <?php include('navbar.php'); ?>
     <main role="main" class="container" style="padding:60px 15px 0;">
       <div>
+        <p>ログイン中のユーザ：<?php echo $_SESSION['name'] ?></p>
         <h1>お知らせ</h1>
         <?php
         if ($fp) {
