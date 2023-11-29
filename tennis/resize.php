@@ -29,5 +29,11 @@ switch(exif_imagetype($_FILES['file']['tmp_name'])) {
     imagecopyresampled($canvas, $image, 0, 0, 0, 0, $new_width, $new_height, $width, $height);
     imagepng($canvas, 'images/new_image.png');
     break;
+
+  // 画像以外のファイルの時
+  default:
+    exit();
 }
+imagedestroy($image);
+imagedestroy($canvas);
 ?>
