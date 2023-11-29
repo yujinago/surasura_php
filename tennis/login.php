@@ -18,6 +18,7 @@ if (isset($_SESSION['id'])) {
     if ($row = $stmt->fetch()) {
       session_regenerate_id(true);
       $_SESSION['id'] = $row['id'];
+      $_SESSION['name'] = $row['name'];
       header('Location: index.php');
       exit();
     } else {
