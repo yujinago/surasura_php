@@ -8,7 +8,9 @@ if (isset($_SESSION['id'])) {
   try {
     $db = new PDO($dsn, $user, $password);
     $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-    $stmt = $db->prepare("SELECT * FROM users WHERE name = :name AND password = :pass");
+    $stmt = $db->prepare("SELECT users.id, users.name AS login_name, profiles.name AS name
+      FROM users, profiles 
+      WHERE users.id = profiles.id AND users.name = :name AND users.password = :pass");
     $stmt->bindParam(':name', $_POST['name'], PDO::PARAM_STR);
     $stmt->bindParam(':pass', hash("sha256", $_POST['password']), PDO::PARAM_STR);
     $stmt->execute();
